@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserLoginFormComponent } from '../user-login-form/user-login-form.component';
 import { UserRegistrationFormComponent } from '../user-registration-form/user-registration-form.component';
-import { MovieCardComponent } from '../movie-card/movie-card.component';
+// import { MovieCardComponent } from '../movie-card/movie-card.component';
 import { MatDialog } from '@angular/material/dialog';
 
 
@@ -13,7 +13,9 @@ import { MatDialog } from '@angular/material/dialog';
 export class WelcomePageComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
   ngOnInit(): void {
+    localStorage.clear();
   }
+  
   //Open the dialog when signup button is clicked
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {
@@ -28,9 +30,9 @@ export class WelcomePageComponent implements OnInit {
     });
   }
 
-  openMoviesDialog(): void {
-    this.dialog.open(MovieCardComponent, {
-      width: '500px'
-    });
-  }
+  // openMoviesDialog(): void {
+  //   this.dialog.open(MovieCardComponent, {
+  //     width: '500px'
+  //   });
+  // }
 }

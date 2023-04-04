@@ -20,8 +20,12 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SeriesComponent } from './series/series.component';
+import { DirectorComponent } from './director/director.component';
+import { SynopsisComponent } from './synopsis/synopsis.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -38,7 +42,10 @@ const appRoutes: Routes = [
     MovieCardComponent,
     WelcomePageComponent,
     UserProfileComponent,
-    NavbarComponent, 
+    NavbarComponent,
+    SeriesComponent,
+    DirectorComponent,
+    SynopsisComponent, 
   ],
   imports: [
     BrowserModule,
@@ -53,7 +60,8 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatSnackBarModule,
     MatIconModule, 
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

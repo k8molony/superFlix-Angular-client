@@ -1,0 +1,94 @@
+$primary: #ee4035;
+$secondary: #f37736;
+$btnColor: #0392cf;
+$textColor: #414141;
+$closeBtnColor: #7bc043;
+
+* {
+  box-sizing: border-box;
+}
+
+.welcome-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3% 3%;
+  background-color: $secondary;
+}
+
+.welcome-card {
+  margin: 25vh auto auto auto;
+  flex-direction: column;
+  box-shadow: 0 0 20px 1px white;
+  justify-content: space-evenly;
+}
+
+.welcome-card-header {
+  font-family: 'Changa One', cursive;  margin-bottom: 5%;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  color:$primary;
+}
+
+.welcome-card-actions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button:first-child {
+  margin-left: 3%;
+}
+
+.mat-mdc-raised-button.mat-primary{
+  background-color: $btnColor;
+  color: white;
+}
+
+@media all and (max-width: 325px) {
+  .welcome-card{
+    width: 95%;
+    max-width: 250px;
+    aspect-ratio: 1.5/1;
+  }
+  .welcome-card-header {
+    font-size: 16px;
+  }
+
+  button > .btn-icon {
+    display: none;
+  }
+}
+
+@media all and (min-width: 325px) and (max-width: 365px) {
+  .welcome-card{
+    width: 95%;
+    max-width: 280px;
+    aspect-ratio: 1.8/1;
+  }
+  .welcome-card-header {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 365px) and (max-width: 500px) {
+  .welcome-card{
+    width: 95%;
+    max-width: 350px;
+    aspect-ratio: 1.8/1;
+  }
+  .welcome-card-header {
+    font-size: 22px;
+  }
+}
+
+@media all and (min-width: 500px) {
+  .welcome-card{
+    width: 420x;
+    aspect-ratio: 2/1;
+  }
+  .welcome-card-header {
+    font-size: 28px;
+  }
+}

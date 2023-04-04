@@ -1,4 +1,23 @@
-<div class="nav-bar">
+<mat-toolbar class="navbar">
+  <span class="nav-logo">
+    <a routerLink="/movies">FavMovie</a>
+  </span>
+
+  <span class="nav-profile">
+    <a routerLink="/profile">
+      Profile
+    </a>
+  </span>
+
+  <span class="nav-logout">
+    <a mat-button (click)="logOut()" class="logout-button">
+      <mat-icon>logout</mat-icon>
+      <span class="nav-logout_text">Logout</span>
+    </a>
+  </span>
+</mat-toolbar>
+
+<!-- <div class="nav-bar">
   <div class="nav-bar--left">
     <button mat-button (click)="goToMovies">SuperFlix</button>
   </div>
@@ -8,4 +27,4 @@
       <mat-icon>logout</mat-icon> Log Out
     </button>
   </div>
-</div>
+</div> -->

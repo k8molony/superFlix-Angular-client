@@ -57,8 +57,6 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
-
-
   deleteAccount(): void {
     if (confirm('All your data will be lost - this cannot be undone!')) {
       this.router.navigate(['welcome']).then(() => {

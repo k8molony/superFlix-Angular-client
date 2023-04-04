@@ -1,0 +1,38 @@
+$secondary: #ee4035;
+$btnColor: #0392cf;
+$cardBg: $secondary;
+$textColor: #fdf498;
+$closeBtnColor: #7bc043;
+
+$titleFontWeight: 600;
+
+.synopsis-dialog {
+  background-color: $cardBg;
+  padding: 3%;
+  max-width: 400px;
+}
+
+.synopsis-dialog-header {
+  justify-content: space-between;
+}
+
+.synopsis-dialog-title {
+  color: $textColor;
+  font-weight: $titleFontWeight;
+}
+
+.synopsis-dialog-content {
+  color: $textColor;
+}
+
+.btn-dialog-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 0px;
+  color:$textColor;
+}
+
+.btn-dialog-close:hover {
+  color:$closeBtnColor;
+}
