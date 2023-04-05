@@ -30,35 +30,50 @@ export class UserProfileComponent implements OnInit {
 
   getUserInfo(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
-      this.user = resp;
-      this.updatedUser.Username = this.user.Username;
-      this.updatedUser.Email = this.user.Email;
-      this.updatedUser.Birthday = this.user.Birthday;
-    });
+      this.user={
+        ...resp,
+        Birthday: new Date(resp.Birthday).toLocaleDateString()
+      };
+      return this.user;
+    })
   }
 
   updateUserInfo(): void {
     this.fetchApiData.editUser(this.updatedUser).subscribe((result) => {
-      console.log(result);
-      this.snackBar.open('User profile successfully updated', 'OK', {
-        duration: 2000,
+      // Logic for a successful user registration goes here! (To be implemented)
+      localStorage.setItem('username', result.Username);
+      this.snackBar.open('Your profile is updated successfully!', 'OK', {
+        duration: 4000
       });
-      if (this.user.Username !== result.Username) {
-        localStorage.clear();
-        this.router.navigate(['welcome']);
-        this.snackBar.open(
-          'User profile successfully updated. Please login using your new credentials',
-          'OK',
-          {
-            duration: 2000,
-          }
-        );
-      }
+      window.location.reload();
+    }, (result) => {
+      this.snackBar.open(result.errors[0].msg, 'OK', {
+        duration: 6000
+      });
     });
   }
+  // updateUserInfo(): void {
+  //   this.fetchApiData.editUser(this.updatedUser).subscribe((result) => {
+  //     console.log(result);
+  //     this.snackBar.open('User profile successfully updated', 'OK', {
+  //       duration: 2000,
+  //     });
+  //     if (this.user.Username !== result.Username) {
+  //       localStorage.clear();
+  //       this.router.navigate(['welcome']);
+  //       this.snackBar.open(
+  //         'User profile successfully updated. Please login using your new credentials',
+  //         'OK',
+  //         {
+  //           duration: 2000,
+  //         }
+  //       );
+  //     }
+  //   });
+  // }
 
   deleteAccount(): void {
-    if (confirm('All your data will be lost - this cannot be undone!')) {
+    if (confirm('Are you sure you want to delete your account? This cannot be undone!')) {
       this.router.navigate(['welcome']).then(() => {
         this.snackBar.open(
           'You have successfully deleted your account',

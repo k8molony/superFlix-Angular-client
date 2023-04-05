@@ -1,12 +1,9 @@
 $textColor: #414141;
-$primary: #f37736;
-$secondary: #ee4035;
-$btnColor: #0392cf;
-$cardBg: $secondary;
-$closeBtnColor: #7bc043;
+$primary: #ee4035;
 
 .container {
   display: flex;
+  background-color: #f37736;
 }
 .movie-list {
   display: flex;
@@ -34,12 +31,13 @@ $closeBtnColor: #7bc043;
 }
 
 .movie-img {
-  height: 450px;
+  height: 100%;
+  width: 100%;
 }
 
 .movie-title {
   align-self: start;
-  overflow-wrap: break-word;
+  // overflow-wrap: break-word;
   word-wrap: break-word;
   font-style: oblique;
   justify-self: flex-start;

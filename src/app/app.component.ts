@@ -9,6 +9,6 @@ export class AppComponent {
   title = 'superFlix-Angular-client';
 
   toolbarVisible(): string | null {
-    return localStorage.getItem('user');
+    return localStorage.getItem('username');
   }
 }

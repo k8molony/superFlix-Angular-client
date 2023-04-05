@@ -12,6 +12,7 @@ $textColor: #fdf498;
   display: flex;
   background-color: $primary;
   color: $textColor;
+  font-family: 'Changa One', cursive;
 }
 
 a {
@@ -26,7 +27,7 @@ a:hover {
 
 .nav-logo {
   flex: 1 1 auto;
-  font-family: 'Monoton', cursive;
+  font-family: 'Changa One', cursive;
   filter:drop-shadow(0 0 5px white);
 }
 

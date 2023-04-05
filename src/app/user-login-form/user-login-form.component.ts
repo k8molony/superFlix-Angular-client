@@ -28,8 +28,8 @@ export class UserLoginFormComponent implements OnInit {
       localStorage.setItem('username', result.user.Username);
 
       this.dialogRef.close(); 
-      this.snackBar.open('Login successfully!', 'OK', {
-        duration: 2000
+      this.snackBar.open('Login successful!', 'OK', {
+        duration: 1000
       });
       this.router.navigate(['movies']);
     }, (response) => {

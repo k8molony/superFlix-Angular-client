@@ -1,7 +1,8 @@
+<app-navbar></app-navbar>
 <div class="movie-list">
   <mat-card class="movie-card" *ngFor="let movie of movies; let i=index;">
     <div class="img-wrapper">
-      <img class="movie-img" src="{{movie.ImagePath}} alt={{movie.Title}}">
+      <img class="movie-img" src={{movie.ImagePath}} alt= {{movie.Title}}/>
     </div>
     <mat-card-header class="movie-title">
       <mat-card-title>{{movie.Title}}</mat-card-title>
@@ -16,7 +17,6 @@
 
       <button
         mat-button
-        color="primary"
         (click)="openSeriesDialog(movie.Series.Name, movie.Series.Description)"
       >
         Series
@@ -24,7 +24,6 @@
 
       <button
         mat-button
-        color="primary"
         (click)="openDirectorDialog(movie.Director.Name, movie.Director.Bio, movie.Director.Birthday)"
       >
         Director

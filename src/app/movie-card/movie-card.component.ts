@@ -30,16 +30,16 @@ export class MovieCardComponent implements OnInit {
   }
 
   getMovies(): void {
-    this.fetchMovies.getAllMovies().subscribe((res: any)=>{
-      this.movies=res;
+    this.fetchMovies.getAllMovies().subscribe((resp: any)=>{
+      this.movies=resp;
       console.log(this.movies);
       return this.movies;
     });
   }
 
   getFavMovies(): void {
-    this.fetchMovies.getUser().subscribe((res: any)=>{
-      this.favoriteMovies=res.FavoriteMovies;
+    this.fetchMovies.getUser().subscribe((resp: any)=>{
+      this.favoriteMovies=resp.FavoriteMovies;
       console.log(this.favoriteMovies);
       return this.favoriteMovies;
     })
@@ -76,24 +76,24 @@ export class MovieCardComponent implements OnInit {
   onToggleFavMovie(id: string): void {
     console.log(this.favoriteMovies);
     if(!this.favoriteMovies.includes(id)) {
-      this.fetchMovies.addFavoriteMovie(id).subscribe((res)=>{
-        this.favoriteMovies=res.FavoriteMovies;
+      this.fetchMovies.addFavoriteMovie(id).subscribe((resp)=>{
+        this.favoriteMovies=resp.FavoriteMovies;
         this.snackBar.open('Movie added to favorites!', 'OK', {
           duration: 3000
         })
-      }, (res) => {
-        this.snackBar.open(res.message, 'OK', {
+      }, (resp) => {
+        this.snackBar.open(resp.message, 'OK', {
           duration: 4000
         });
       })
     } else {
-      this.fetchMovies.removeFavoriteMovie(id).subscribe((res)=>{
-        this.favoriteMovies=res.FavoriteMovies;
+      this.fetchMovies.removeFavoriteMovie(id).subscribe((resp)=>{
+        this.favoriteMovies=resp.FavoriteMovies;
         this.snackBar.open('Movie removed from favorites!', 'OK', {
           duration: 3000
         })
-      }, (res) => {
-        this.snackBar.open(res.message, 'OK', {
+      }, (resp) => {
+        this.snackBar.open(resp.message, 'OK', {
           duration: 4000
         });
       })
