@@ -28,7 +28,17 @@
             "assets": [
               "src/favicon.ico",
               "src/assets", 
-              "src/img"
+              "src/img",
+              "src/img/Avengers.jpeg",
+              "src/img/captainmarvel.jpg",
+              "src/img/CAWinterSoldier.jpeg",
+              "src/img/FirstAvenger.jpeg",
+              "src/img/hulk.jpeg",
+              "src/img/iron-man.jpeg",
+              "src/img/IronMan2.jpeg",
+              "src/img/IronMan3.jpg",
+              "src/img/Thor.jpeg",
+              "src/img/ThorDarkWorld.jpeg"
             ],
             "styles": [
               "src/styles.scss",
