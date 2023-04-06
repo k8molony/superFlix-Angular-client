@@ -40,42 +40,6 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  // // Get a movie by title
-  // getMovie(title: string): Observable<any> {
-  //   const token = localStorage.getItem('token');
-  //   return this.http
-  //     .get(`${apiUrl}/movies/${title}`, {
-  //       headers: new HttpHeaders({
-  //         Authorization: 'Bearer ' + token,
-  //       }),
-  //     })
-  //     .pipe(map(this.extractResponseData), catchError(this.handleError));
-  // }
-
-  // // Get Director's info
-  // getDirector(directorName: string): Observable<any> {
-  //   const token = localStorage.getItem('token');
-  //   return this.http
-  //     .get(`${apiUrl}/movies/directors/${directorName}`, {
-  //       headers: new HttpHeaders({
-  //         Authorization: 'Bearer ' + token,
-  //       }),
-  //     })
-  //     .pipe(map(this.extractResponseData), catchError(this.handleError));
-  // }
-
-  // // Get genre/series data by name
-  // getSeries(seriesName: string): Observable<any> {
-  //   const token = localStorage.getItem('token');
-  //   return this.http
-  //     .get(`${apiUrl}/movies/series/${seriesName}`, {
-  //       headers: new HttpHeaders({
-  //         Authorization: 'Bearer ' + token,
-  //       }),
-  //     })
-  //     .pipe(map(this.extractResponseData), catchError(this.handleError));
-  // }
-
   // Get user data by username
   getUser(): Observable<any> {
     const username = localStorage.getItem('username');
@@ -178,3 +142,40 @@ export class FetchApiDataService {
     return throwError('Something bad happened; please try again later');
   }
 }
+
+  // // Get a movie by title
+  // getMovie(title: string): Observable<any> {
+  //   const token = localStorage.getItem('token');
+  //   return this.http
+  //     .get(`${apiUrl}/movies/${title}`, {
+  //       headers: new HttpHeaders({
+  //         Authorization: 'Bearer ' + token,
+  //       }),
+  //     })
+  //     .pipe(map(this.extractResponseData), catchError(this.handleError));
+  // }
+
+  // // Get Director's info
+  // getDirector(directorName: string): Observable<any> {
+  //   const token = localStorage.getItem('token');
+  //   return this.http
+  //     .get(`${apiUrl}/movies/directors/${directorName}`, {
+  //       headers: new HttpHeaders({
+  //         Authorization: 'Bearer ' + token,
+  //       }),
+  //     })
+  //     .pipe(map(this.extractResponseData), catchError(this.handleError));
+  // }
+
+  // // Get genre/series data by name
+  // getSeries(seriesName: string): Observable<any> {
+  //   const token = localStorage.getItem('token');
+  //   return this.http
+  //     .get(`${apiUrl}/movies/series/${seriesName}`, {
+  //       headers: new HttpHeaders({
+  //         Authorization: 'Bearer ' + token,
+  //       }),
+  //     })
+  //     .pipe(map(this.extractResponseData), catchError(this.handleError));
+  // }
+
