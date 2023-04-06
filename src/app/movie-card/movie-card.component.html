@@ -31,7 +31,8 @@
 
       <button
         mat-icon-button
-        aria-label="Example icon button with a heart icon"
+        color="warn"
+        aria-label="heart icon"
         (click)="onToggleFavMovie(movie._id)"
       >
         <mat-icon class="favIcon">{{favoriteMovies.includes(movie._id) ? 'favorite' : 'favorite_border'}}</mat-icon>
@@ -39,32 +40,3 @@
     </mat-card-actions>
   </mat-card>
 </div>
-
-<!-- <div style="display: flex;">
-  <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
-    <mat-card-header>
-      <mat-card-title>{{movie.Title}}</mat-card-title>
-        <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
-    </mat-card-header>
-    <img src={{movie.ImagePath}} alt= {{movie.Title}} />
-    <mat-card-actions>
-      <button
-        mat-buttoncolor="primary"
-      >
-        Series
-      </button>
-      <button
-        mat-button
-        color="primary"
-      >
-        Director
-      </button>
-      <button
-        mat-buttoncolor="primary"
-      >
-        Synopsis
-      </button>
-      <mat-icon>favorite_border</mat-icon>
-    </mat-card-actions>
-  </mat-card>
-</div> -->

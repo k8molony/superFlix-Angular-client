@@ -10,21 +10,25 @@ $titleFontWeight: 600;
 .director-dialog {
   background-color: $cardBg;
   padding: 3%;
-  max-width: 30%;
+  max-width: 400px;
 }
+
 
 .director-dialog-header {
   justify-content: space-between;
 }
+
 
 .director-dialog-title {
   color: $textColor;
   font-weight: $titleFontWeight;
 }
 
+
 .director-dialog-content {
   color: $textColor;
 }
+
 
 .btn-dialog-close {
   position: absolute;
@@ -33,6 +37,7 @@ $titleFontWeight: 600;
   padding: 0px;
   color:$textColor;
 }
+
 
 .btn-dialog-close:hover {
   color:$closeBtnColor;

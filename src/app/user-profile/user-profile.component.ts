@@ -52,25 +52,6 @@ export class UserProfileComponent implements OnInit {
       });
     });
   }
-  // updateUserInfo(): void {
-  //   this.fetchApiData.editUser(this.updatedUser).subscribe((result) => {
-  //     console.log(result);
-  //     this.snackBar.open('User profile successfully updated', 'OK', {
-  //       duration: 2000,
-  //     });
-  //     if (this.user.Username !== result.Username) {
-  //       localStorage.clear();
-  //       this.router.navigate(['welcome']);
-  //       this.snackBar.open(
-  //         'User profile successfully updated. Please login using your new credentials',
-  //         'OK',
-  //         {
-  //           duration: 2000,
-  //         }
-  //       );
-  //     }
-  //   });
-  // }
 
   deleteAccount(): void {
     if (confirm('Are you sure you want to delete your account? This cannot be undone!')) {
