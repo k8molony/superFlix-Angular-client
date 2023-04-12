@@ -29,6 +29,10 @@ export class MovieCardComponent implements OnInit {
     this.getFavMovies();
   }
 
+  /**
+   * Fetch movies via API
+   * @returns an array holding movie objects
+   */
   getMovies(): void {
     this.fetchMovies.getAllMovies().subscribe((resp: any)=>{
       this.movies=resp;
@@ -37,6 +41,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Fetch user info via API and set favoriteMovies variable to FavoriteMovies property of the returned user object
+   * @returns an array holding movieIDs
+   */
   getFavMovies(): void {
     this.fetchMovies.getUser().subscribe((resp: any)=>{
       this.favoriteMovies=resp.FavoriteMovies;
@@ -45,6 +53,11 @@ export class MovieCardComponent implements OnInit {
     })
   }
 
+  /**
+   * Opens SeriesComponent as a dialog
+   * @param name - name of the series
+   * @param description - description of the series
+   */
   openSeriesDialog(name: string, description: string): void {
     this.dialog.open(SeriesComponent, {
       data: {
@@ -54,6 +67,12 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens DirectorComponent as a dialog
+   * @param name - name of the director
+   * @param bio - biography of the director
+   * @param birthday - birthday of the director
+   */
   openDirectorDialog(name: string, bio: string, birthday: string): void {
     this.dialog.open(DirectorComponent, {
       data: {
@@ -64,6 +83,11 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens SynopsisComponent as a dialog
+   * @param title - title of the movie
+   * @param description - description of the movie
+   */
   openSynopsisDialog(title: string, description: string): void {
     this.dialog.open(SynopsisComponent, {
       data: {
@@ -73,6 +97,14 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Add/remove a movie from the user's favorite movie list
+   * @remarks 
+   * Check if the favoriteMovies variable contains the movieID, if no, make API call to add this ID into the
+   * user's FavoriteMovie property; if yes, make API call to delete this ID.  After the API call,
+   * set the favoriteMovies variable to the updated FavoriteMovies property. Open snackBar to inform.
+   * @param id - movieId of the particular movie
+   */
   onToggleFavMovie(id: string): void {
     console.log(this.favoriteMovies);
     if(!this.favoriteMovies.includes(id)) {
@@ -82,6 +114,7 @@ export class MovieCardComponent implements OnInit {
           duration: 3000
         })
       }, (resp) => {
+        //Error response
         this.snackBar.open(resp.message, 'OK', {
           duration: 4000
         });
@@ -93,6 +126,7 @@ export class MovieCardComponent implements OnInit {
           duration: 3000
         })
       }, (resp) => {
+        //Error response
         this.snackBar.open(resp.message, 'OK', {
           duration: 4000
         });

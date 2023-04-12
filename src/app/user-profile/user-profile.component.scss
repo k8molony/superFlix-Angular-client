@@ -44,18 +44,23 @@ mat-card-header {
   margin-top: 24px;
 }
 
-.mat-mdc-raised-button.mat-primary{
+.mat-mdc-raised-button.mat-primary {
   background-color: $btnColor;
   color: white;
 }
 
-.mat-mdc-raised-button.mat-warn{
+.mat-mdc-raised-button.mat-warn {
   background-color: $secondary;
   color: white;
 }
 
 mat-label {
   color: $textColor;
+}
+
+.fav-card {
+  display: flex;
+  flex-direction: row;
 }
 
 @media all and (max-width: 300px) {

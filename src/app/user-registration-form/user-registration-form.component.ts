@@ -21,7 +21,13 @@ export class UserRegistrationFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // Send form inputs to backend
+  /**
+   * Register a new user.
+   * 
+   * @remarks
+   * Make API call to register the user.  If successful, open snackBar to inform and close the login dialog.
+   * If fail, open snackBar to show error message
+   */
   registerUser(): void {
     this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
       this.dialogRef.close(); //close dialog on success
@@ -30,6 +36,7 @@ export class UserRegistrationFormComponent implements OnInit {
         duration: 2000
       });
     }, (result) => {
+      //Error response
       console.log(result);
       this.snackBar.open(result, 'OK', {
         duration: 2000

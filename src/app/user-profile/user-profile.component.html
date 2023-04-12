@@ -105,3 +105,36 @@
     </mat-card-actions>
   </mat-card>
 </div>
+
+  <!-- Favorite movies list
+<div>
+  <mat-card class="fav-card">
+    <mat-card-header class="card-header">
+      <mat-card-title>Your Favorites:</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="fav-movie-list">
+        <mat-card class="fav-movie-card" *ngFor="let favoriteMovie of favoriteMovies; let i=index;">
+          <div class="img-wrapper">
+            <img class="movie-img" src={{movie.ImagePath}} alt= {{movie.Title}}/>
+          </div>
+          <mat-card-header class="movie-title">
+            <mat-card-title>{{movie.Title}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-actions class="movie-actions">      
+            <button
+              mat-icon-button
+              color="warn"
+              aria-label="heart icon"
+              (click)="onToggleFavMovie(movie._id)"
+            >
+              <mat-icon class="favIcon">{{favoriteMovies.includes(movie._id) ? 'favorite' : 'favorite_border'}}</mat-icon>
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      
+    </mat-card-content>
+  </mat-card>
+</div> -->

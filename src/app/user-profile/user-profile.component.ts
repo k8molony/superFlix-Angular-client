@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class UserProfileComponent implements OnInit {
   user: any = {};
+  favoriteMovies: any[]=[];
   initialInput: any = {};
   @Input() updatedUser = {
     Username: '',
@@ -28,6 +29,11 @@ export class UserProfileComponent implements OnInit {
     this.getUserInfo();
   }
 
+  /**
+   * Make API call to get user info, change the format of 'Birthday' property to localDateString
+   * and set the user variable to the user object
+   * @returns object with user information
+   */
   getUserInfo(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
       this.user={
@@ -38,6 +44,12 @@ export class UserProfileComponent implements OnInit {
     })
   }
 
+  /**
+   * Update user info
+   * 
+   * @remarks
+   * Make API call to update the user, reset the localtorage, and reload the profile page.
+   */
   updateUserInfo(): void {
     this.fetchApiData.editUser(this.updatedUser).subscribe((result) => {
       // Logic for a successful user registration goes here! (To be implemented)
@@ -53,6 +65,12 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Delete user account
+   * 
+   * @remarks
+   * Make API call to delete the user, navigate to the welcome page and remove user info from localStorage
+   */
   deleteAccount(): void {
     if (confirm('Are you sure you want to delete your account? This cannot be undone!')) {
       this.router.navigate(['welcome']).then(() => {
@@ -70,4 +88,12 @@ export class UserProfileComponent implements OnInit {
       });
     }
   }
+  
+  // getUserFavorites(): void {
+  //   this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
+  //     this.favoriteMovies=resp.FavoriteMovies;
+  //     return this.favoriteMovies;
+  //   })
+  // }
 }
+
